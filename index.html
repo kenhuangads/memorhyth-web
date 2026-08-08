@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fcfcfb" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)" />
+  <title>MemoRhyth — 個人秘書</title>
+  <link rel="stylesheet" href="./style.css?v=20260808T131801" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+  <meta name="mr-build" content="20260808T131801" />
+  <meta name="mr-api-base" content="https://lloblxqlkpyovxzfrgxb.supabase.co/functions/v1/app" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">M</span>
+        <div>
+          <h1>MemoRhyth</h1>
+          <p id="today-line" class="sub"></p>
+        </div>
+      </div>
+      <button id="notify-btn" class="ghost-btn" title="開啟提醒通知" hidden>🔔</button>
+    </header>
+
+    <!-- 快速輸入 -->
+    <section class="capture card">
+      <textarea
+        id="capture-input"
+        rows="2"
+        placeholder="說一句話或打關鍵字，例如：&#10;買便當 100，明天早上九點提醒我開會"
+      ></textarea>
+      <div class="capture-actions">
+        <button id="mic-btn" class="mic-btn" title="語音輸入" hidden>🎤</button>
+        <button id="photo-btn" class="mic-btn" title="拍照或選圖辨識">📷</button>
+        <span id="engine-badge" class="engine-badge"></span>
+        <button id="send-btn" class="primary-btn">送出</button>
+      </div>
+      <div id="capture-results" class="capture-results"></div>
+    </section>
+
+    <!-- 分頁 -->
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="overview">總覽</button>
+      <button class="tab" data-tab="expenses">記帳</button>
+      <button class="tab" data-tab="tasks">待辦</button>
+      <button class="tab" data-tab="notes">筆記</button>
+    </nav>
+
+    <main>
+      <section id="tab-overview" class="tab-panel active"></section>
+      <section id="tab-expenses" class="tab-panel"></section>
+      <section id="tab-tasks" class="tab-panel"></section>
+      <section id="tab-notes" class="tab-panel"></section>
+    </main>
+
+    <footer class="foot">
+      <p>MemoRhyth · 資料只存在你自己的裝置上</p>
+    </footer>
+  </div>
+  <input type="file" id="photo-file" accept="image/*" hidden />
+  <input type="file" id="csv-file" accept=".csv,text/csv" hidden />
+  <script src="./vendor/jsQR.js?v=20260808T131801" defer></script>
+  <script src="./app.js?v=20260808T131801" defer></script>
+</body>
+</html>

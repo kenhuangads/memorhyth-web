@@ -1,0 +1,18 @@
+{
+  "name": "MemoRhyth 個人秘書",
+  "short_name": "MemoRhyth",
+  "description": "一句話搞定記帳、待辦與提醒",
+  "lang": "zh-Hant-TW",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f9f9f7",
+  "theme_color": "#2a78d6",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
